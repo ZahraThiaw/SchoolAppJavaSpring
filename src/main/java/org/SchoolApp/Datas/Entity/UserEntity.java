@@ -5,14 +5,18 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 import org.SchoolApp.Datas.Enums.StatusEnum;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.GrantedAuthority;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "user_entity")
 @ToString
-public class UserEntity extends EntityAbstract {
+public class UserEntity extends EntityAbstract implements UserDetails{
 
     private String nom;
     private String prenom;
@@ -68,5 +72,38 @@ public class UserEntity extends EntityAbstract {
     @Override
     public int hashCode() {
         return super.hashCode(); // Utilise le hashCode de EntityAbstract basé sur l'id
+    }
+
+
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

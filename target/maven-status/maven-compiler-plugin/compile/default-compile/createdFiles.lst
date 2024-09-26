@@ -79,7 +79,6 @@ org/SchoolApp/Web/Dtos/Mapper/ApprenantMapper.class
 org/SchoolApp/Web/Dtos/Mapper/NoteUpdateMapper.class
 org/SchoolApp/Datas/Repository/SoftDeleteRepository.class
 org/SchoolApp/Datas/Entity/CompetencesEntity.class
-org/SchoolApp/Services/Impl/UserService.class
 org/SchoolApp/Datas/Repository/CompetencesRepository.class
 org/SchoolApp/Web/Controller/Impl/NoteController.class
 org/SchoolApp/Services/Impl/ReferentielServiceImpl.class

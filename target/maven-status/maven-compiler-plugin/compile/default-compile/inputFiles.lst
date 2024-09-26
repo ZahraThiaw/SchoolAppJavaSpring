@@ -43,7 +43,6 @@
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/QRCodeServiceImpl.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/ReferentielServiceImpl.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/RoleServiceImpl.java
-/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/UserService.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/UserServiceImpl.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Interfaces/ApprenantService.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Interfaces/CrudService.java
