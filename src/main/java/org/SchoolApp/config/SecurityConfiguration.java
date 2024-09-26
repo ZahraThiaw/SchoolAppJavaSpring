@@ -32,17 +32,12 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())  // Désactiver CSRF
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/**").permitAll()  // Autoriser les requêtes d'authentification
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()  // Autoriser Swagger et les API docs
-                        .anyRequest().authenticated()  // Authentification pour le reste
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                        //.requestMatchers("/auth/**").authenticated()  // Protéger votre API
+                        .requestMatchers("/swagger-ui/*", "/v3/api-docs/","/auth/*").permitAll()  // Autoriser Swagger
+                        .anyRequest().authenticated()  // Protéger toutes les autres routes
                 )
-                .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)  // Pas de gestion de session
-                )
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .csrf(csrf -> csrf.disable());  // Désactiver CSRF si vous utilisez une API stateless
 
         return http.build();
     }
