@@ -34,11 +34,10 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())  // Désactiver CSRF
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/**").permitAll()  // Autoriser toutes les routes sous /auth/
-                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html").permitAll()  // Autoriser Swagger
-                        .anyRequest().authenticated()  // Exiger l'authentification pour le reste
+                        .requestMatchers("/auth/**").permitAll()  // Autoriser les requêtes d'authentification
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()  // Autoriser Swagger et les API docs
+                        .anyRequest().authenticated()  // Authentification pour le reste
                 )
-
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)  // Pas de gestion de session
                 )
@@ -51,14 +50,15 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:8080", "https://schoolappjavaspring.onrender.com"));
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
-        configuration.setAllowCredentials(true);  // Autoriser l'envoi des cookies si nécessaire
+        configuration.setAllowedOrigins(List.of("http://localhost:8080", "https://schoolappjavaspring.onrender.com"));  // Vos origines
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));  // Méthodes autorisées
+        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With"));  // En-têtes autorisés
+        configuration.setAllowCredentials(true);  // Autoriser les cookies
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
+        source.registerCorsConfiguration("/**", configuration);  // Appliquer CORS à toutes les routes
         return source;
     }
+
 
 }
