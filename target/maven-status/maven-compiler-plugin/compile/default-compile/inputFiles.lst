@@ -34,9 +34,11 @@
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Jobs/AbsenceScheduler.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/SchoolAppJavaApplication.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/ApprenantServiceImpl.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/AuthenticationService.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/EmailServiceImpl.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/EmergementService.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/FonctionServiceImpl.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/JwtService.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/ModulesServiceImpl.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/NoteService.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Services/Impl/PromoService.java
@@ -57,6 +59,7 @@
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Validators/Validator.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Advice/ApiResponseBodyAdvice.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Controller/Impl/ApprenantController.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Controller/Impl/AuthenticationController.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Controller/Impl/EmargementController.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Controller/Impl/NoteController.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Controller/Impl/PromoController.java
@@ -82,6 +85,7 @@
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/CompetenceRequest.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/CompetenceRequestDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/CompetenceUpdateRequestDto.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/LoginUserDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/ModuleDTO.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/ModuleRequest.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/ModuleRequestDto.java
@@ -95,12 +99,14 @@
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/ReferentielDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/ReferentielRequestDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/ReferentielUpdateRequestDto.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/RegisterUserDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/UserRequestDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Request/UserUpdateRequestDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/ApiResponse.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/ApprenantResponseDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/ArticleResponse.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/CompetenceResponseDto.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/LoginResponse.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/ModuleResponseDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/NoteResponseDto.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Dtos/Response/PromoResponseDto.java
@@ -110,4 +116,8 @@
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Validators/UniqueField.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/Web/Validators/UniqueLibelleValidator.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/config/AppConfig.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/config/ApplicationConfiguration.java
 /home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/config/FilterConfig.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/config/JwtAuthenticationFilter.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/config/OpenAPIConfig.java
+/home/fatimata/SchoolAppJavaSpring/src/main/java/org/SchoolApp/config/SecurityConfiguration.java

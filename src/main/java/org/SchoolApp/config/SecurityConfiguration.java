@@ -35,7 +35,7 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable())  // Désactiver CSRF
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/**").permitAll()  // Autoriser les requêtes d'authentification
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()  // Autoriser Swagger et les API docs
+                        .requestMatchers("/swagger-ui/**", "/api-docs/**", "/swagger-ui.html").permitAll()  // Autoriser Swagger et les API docs
                         .anyRequest().authenticated()  // Authentification pour le reste
                 )
                 .sessionManagement(session -> session
