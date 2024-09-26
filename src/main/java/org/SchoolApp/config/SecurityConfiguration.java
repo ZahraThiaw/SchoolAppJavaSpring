@@ -34,10 +34,11 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())  // Désactiver CSRF
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/**").permitAll()  // Autoriser les requêtes d'authentification
-                        .requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "https://schoolappjavaspring.onrender.com/swagger-ui/index.html").permitAll()  // Autoriser Swagger
-                        .anyRequest().authenticated()  // Nécessite authentification pour les autres requêtes
+                        .requestMatchers("/auth/**").permitAll()  // Autoriser toutes les routes sous /auth/
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html").permitAll()  // Autoriser Swagger
+                        .anyRequest().authenticated()  // Exiger l'authentification pour le reste
                 )
+
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)  // Pas de gestion de session
                 )
@@ -51,12 +52,13 @@ public class SecurityConfiguration {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("http://localhost:8080", "https://schoolappjavaspring.onrender.com"));
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));  // Autoriser les méthodes
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));  // Autoriser les en-têtes
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        configuration.setAllowCredentials(true);  // Autoriser l'envoi des cookies si nécessaire
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);  // Appliquer la configuration CORS à toutes les requêtes
-
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
 }
