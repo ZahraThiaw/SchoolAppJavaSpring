@@ -50,7 +50,7 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:8080", "https://schoolappjavaspring.onrender.com/swagger-ui/index.html"));  // Autoriser les origines
+        configuration.setAllowedOrigins(List.of("http://localhost:8080", "https://schoolappjavaspring.onrender.com"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));  // Autoriser les méthodes
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));  // Autoriser les en-têtes
 
