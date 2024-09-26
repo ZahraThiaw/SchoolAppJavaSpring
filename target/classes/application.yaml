@@ -1,9 +1,6 @@
 spring:
   datasource:
-    #url: jdbc:postgresql://ep-muddy-bar-a5tq9r8m.us-east-2.aws.neon.tech/neondb?user=neondb_owner&password=mdGtb7Zi4cNJ&sslmode=require
-    url: jdbc:postgresql://localhost:5432/springschool
-    username: fatimata
-    password: passer123
+    url: jdbc:postgresql://ep-muddy-bar-a5tq9r8m.us-east-2.aws.neon.tech/neondb?user=neondb_owner&password=mdGtb7Zi4cNJ&sslmode=require
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
